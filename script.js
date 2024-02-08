@@ -134,7 +134,8 @@ function displayCompletionMessage() {
         completionMessage.style.color = 'green';
     } else {
         completionMessage.textContent = 'Puzzle Incomplete. Keep Going!';
-        completionMessage.style.color = 'black';
+        completionMessage.style.color = 'red';
+        completionMessage.style.fontWeight = 'bold';
     }
 }
 

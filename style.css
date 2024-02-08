@@ -37,14 +37,14 @@ h2 {
   display: flex;
   justify-content: space-between;
   width: 70%;
-  margin-top: 20px; /* Add some space between puzzle and buttons */
+  margin-top: 1px; /* Add some space between puzzle and buttons */
 }
 
 #check-button,
 #restart-button {
   padding: 10px 20px;
   font-size: 16px;
-  background-color: #4CAF50;
+  background-color: #007cf9;
   color: white;
   border: none;
   border-radius: 4px;

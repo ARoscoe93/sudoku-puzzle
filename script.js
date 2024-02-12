@@ -27,12 +27,25 @@ function fillCells(newPuzzle) {
 
 // Function to check if a move is valid
 function isValidMove(puzzle, row, col, num) {
-    // Check if the number is not already in the same row, column, or box
-    return (
-        !isInRow(puzzle, row, num) &&
-        !isInCol(puzzle, col, num) &&
-        !isInBox(puzzle, row - row % 3, col - col % 3, num)
-    );
+    // Check if the number is not already in the same row or column
+    for (let i = 0; i < 9; i++) {
+        if (puzzle[row][i] === num || puzzle[i][col] === num) {
+            return false;
+        }
+    }
+
+    // Check if the number is not already in the 3x3 box
+    const startRow = Math.floor(row / 3) * 3;
+    const startCol = Math.floor(col / 3) * 3;
+    for (let i = startRow; i < startRow + 3; i++) {
+        for (let j = startCol; j < startCol + 3; j++) {
+            if (puzzle[i][j] === num) {
+                return false;
+            }
+        }
+    }
+
+    return true;
 }
 
 // Helper functions to check if a number is already present in a row, column, or box
